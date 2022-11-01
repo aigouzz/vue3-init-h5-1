@@ -1,26 +1,49 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+/*
+ * @version: v 1.0.0
+ * @Github: https://github.com/aigouzz
+ * @Author: aig
+ * @LastEditors: aig
+ * @FilePath: /vue-init-h5-1/src/router/index.js
+ */
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes: Array<RouteRecordRaw> = [
+const indexRouter = {
+  path: "/",
+  component: () => import("@/views/index"),
+  redirect: "/index",
+  children: [],
+};
+
+const routes = [
+  indexRouter,
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
+    path: "/nopermission",
+    name: "nopermission",
+    meta: {
+      index: 1,
+    },
+    component: () => import("@/views/error/NoPermission"),
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/:w+",
+    name: "404",
+    meta: {
+      index: 1,
+    },
+    component: () => import("@/views/error/404"),
   },
 ];
 
-const router = createRouter({
+const routerContext = require.context("./modules", true, /\.js$/);
+routerContext.keys().forEach((route) => {
+  const routerModule = routerContext(route);
+  indexRouter.children = [
+    ...indexRouter.children,
+    ...(routerModule.default || routerModule),
+  ];
+});
+
+export default createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
-export default router;
