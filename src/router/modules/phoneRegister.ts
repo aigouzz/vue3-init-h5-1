@@ -5,6 +5,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/register/phoneRegister"),
+    component: () => import("@/views/register/phoneRegister.vue"),
   },
 ];

@@ -76,7 +76,7 @@ export default {
       default: 20,
     },
   },
-  setup(props, setupContext) {
+  setup(props: any, setupContext: any) {
     const wrapper = ref(null);
     const initScroll = () => {
       if (!wrapper.value) {
@@ -106,7 +106,7 @@ export default {
       }
       // 是否派发顶部下拉事件，用于下拉刷新
       if (props.pulldown) {
-        scroll.on("touchend", (pos) => {
+        scroll.on("touchend", (pos: any): void => {
           // 下拉动作
           if (pos.y > 50) {
             setupContext.emit("pulldown");
@@ -121,30 +121,30 @@ export default {
       }
     };
 
-    const disable = () => {
-      // 代理better-scroll的disable方法
-      scroll?.disable();
-    };
+    // const disable = () => {
+    //   // 代理better-scroll的disable方法
+    //   scroll?.disable();
+    // };
 
-    const enable = () => {
-      // 代理better-scroll的enable方法
-      scroll?.enable();
-    };
+    // const enable = () => {
+    //   // 代理better-scroll的enable方法
+    //   scroll?.enable();
+    // };
 
-    const refresh = () => {
-      // 代理better-scroll的refresh方法
-      scroll?.refresh();
-    };
+    // const refresh = () => {
+    //   // 代理better-scroll的refresh方法
+    //   scroll?.refresh();
+    // };
 
-    const scrollTo = () => {
-      // 代理better-scroll的scrollTo方法
-      scroll?.scrollTo.apply(scroll, arguments);
-    };
+    // const scrollTo = () => {
+    //   // 代理better-scroll的scrollTo方法
+    //   scroll?.scrollTo.apply(scroll, arguments);
+    // };
 
-    const scrollToElement = () => {
-      // 代理better-scroll的scrollToElement方法
-      scroll?.scrollToElement.apply(scroll, arguments);
-    };
+    // const scrollToElement = () => {
+    //   // 代理better-scroll的scrollToElement方法
+    //   scroll?.scrollToElement.apply(scroll, arguments);
+    // };
 
     onMounted(() => {
       nextTick(() => {

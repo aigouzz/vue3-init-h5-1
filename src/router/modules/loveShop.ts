@@ -6,6 +6,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/loveShop/index"),
+    component: () => import("@/views/loveShop/index.vue"),
   },
 ];

@@ -9,7 +9,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const indexRouter = {
   path: "/",
-  component: () => import("@/views/index"),
+  component: () => import("@/views/index.vue"),
   redirect: "/index",
   children: [],
 };
@@ -22,7 +22,7 @@ const routes = [
     meta: {
       index: 1,
     },
-    component: () => import("@/views/error/NoPermission"),
+    component: () => import("@/views/error/NoPermission.vue"),
   },
   {
     path: "/:w+",
@@ -30,17 +30,16 @@ const routes = [
     meta: {
       index: 1,
     },
-    component: () => import("@/views/error/404"),
+    component: () => import("@/views/error/404.vue"),
   },
 ];
 
 const routerContext = require.context("./modules", true, /\.js$/);
 routerContext.keys().forEach((route) => {
   const routerModule = routerContext(route);
-  indexRouter.children = [
-    ...indexRouter.children,
-    ...(routerModule.default || routerModule),
-  ];
+  indexRouter.children = indexRouter.children.concat(
+    routerModule.default || routerModule
+  );
 });
 
 export default createRouter({

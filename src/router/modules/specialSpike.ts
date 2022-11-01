@@ -6,6 +6,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/specialSpike/index"),
+    component: () => import("@/views/specialSpike/index.vue"),
   },
 ];

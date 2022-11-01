@@ -6,6 +6,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/myFocus/index"),
+    component: () => import("@/views/myFocus/index.vue"),
   },
 ];

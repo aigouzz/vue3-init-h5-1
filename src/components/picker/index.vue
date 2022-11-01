@@ -76,7 +76,8 @@
   </div>
 </template>
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "vuePickers",
   props: {
     show: {
@@ -276,7 +277,7 @@ export default {
         }
       }
     },
-    setTop(defaultData: any) {
+    setTop(defaultData: Array<any>) {
       this.$nextTick(() => {
         let province = this.$refs.province;
         let city = this.$refs.city;
@@ -357,7 +358,7 @@ export default {
         city.style["-webkit-transform"] = "translate3d(0, 0, 0)";
       });
     },
-    resetData3(endVal) {
+    resetData3(endVal: any) {
       this.$nextTick(() => {
         var county = this.$refs.county;
         if (this.pData2.length > 0 && this.pData2[endVal]) {
@@ -410,14 +411,16 @@ export default {
       },
       deep: true,
     },
-    show(val) {
-      if (val) {
-        this.isOpened += 1;
-        this.setTop(this.defaultData || []);
-      }
+    show: {
+      handler(): void {
+        if (this.show) {
+          this.isOpened += 1;
+          this.setTop(this.defaultData || []);
+        }
+      },
     },
   },
-};
+});
 </script>
 
 <style scoped>

@@ -5,6 +5,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/login/index"),
+    component: () => import("@/views/login/index.vue"),
   },
 ];

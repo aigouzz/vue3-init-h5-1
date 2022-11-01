@@ -6,6 +6,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/chainCatSpike/index"),
+    component: () => import("@/views/chainCatSpike/index.vue"),
   },
 ];

@@ -6,6 +6,6 @@ export default [
     meta: {
       index: 2,
     },
-    component: () => import("@/views/newProductLaunch/index"),
+    component: () => import("@/views/newProductLaunch/index.vue"),
   },
 ];

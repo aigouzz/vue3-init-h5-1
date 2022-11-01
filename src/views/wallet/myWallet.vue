@@ -81,7 +81,8 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "MyWallet",
   data() {
     return {};
@@ -107,7 +108,7 @@ export default {
       this.$router.push(`/wallet/balanceWallet`);
     },
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

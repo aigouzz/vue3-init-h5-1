@@ -47,7 +47,11 @@ export function formValidate(val: string, type: string) {
 
 // 获取url参数
 export function getUrlKey(name: string) {
-  return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.href) || [, ""])[1].replace(/\+/g, "%20")) || null;
+  const arr = new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(
+    location.href
+  );
+  // eslint-disable-next-line no-sparse-arrays
+  return arr ? decodeURIComponent(arr[1].replace(/\+/g, "%20")) : null;
 }
 
 // 数组去重
