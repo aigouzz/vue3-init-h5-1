@@ -160,8 +160,8 @@ export default defineComponent({
     gearTouchMove(e: any) {
       e.stopPropagation();
       e.preventDefault();
-      var target = e.target;
-      while (true) {
+      let target = e.target;
+      while (target) {
         if (!target.classList.contains("gear")) {
           target = target.parentElement;
         } else {
@@ -185,7 +185,7 @@ export default defineComponent({
       e.stopPropagation();
       e.preventDefault();
       var target = e.target;
-      while (true) {
+      while (target) {
         if (!target.classList.contains("gear")) {
           target = target.parentElement;
         } else {
@@ -247,7 +247,7 @@ export default defineComponent({
         d++;
       }, 30);
     },
-    setGear(target: object, val: number) {
+    setGear(target: HTMLElement, val: number) {
       var endVal = Math.round(val);
       this.setIndex = endVal;
       var type = target.getAttribute("data-type");
@@ -279,9 +279,9 @@ export default defineComponent({
     },
     setTop(defaultData: Array<any>) {
       this.$nextTick(() => {
-        let province = this.$refs.province;
-        let city = this.$refs.city;
-        let county = this.$refs.county;
+        let province = this.$refs.province as HTMLElement;
+        let city = this.$refs.city as HTMLElement;
+        let county = this.$refs.county as HTMLElement;
         let pos1 = 0;
         let pos2 = 0;
         let pos3 = 0;
@@ -302,7 +302,7 @@ export default defineComponent({
         if (defaultData[0] && defaultData[0].value) {
           this.selects.select1 = defaultData[0];
           for (var i = 0, len = this.pData1.length; i < len; i++) {
-            if (this.pData1[i].value == defaultData[0].value) {
+            if (this.pData1[i]["value"] == defaultData[0].value) {
               this.setIndex = i;
               pos1 = -(i * 2);
               break;
@@ -317,7 +317,7 @@ export default defineComponent({
             this.pData2 = this.selectData.data2[defaultData[0].value];
           }
           for (let i = 0, len = this.pData2.length; i < len; i++) {
-            if (this.pData2[i].value == defaultData[1].value) {
+            if (this.pData2[i]["value"] == defaultData[1].value) {
               pos2 = -(i * 2);
               break;
             }
@@ -331,7 +331,7 @@ export default defineComponent({
             this.pData3 = this.selectData.data3[defaultData[1].value];
           }
           for (let i = 0, len = this.pData3.length; i < len; i++) {
-            if (this.pData3[i].value == defaultData[2].value) {
+            if (this.pData3[i]["value"] == defaultData[2].value) {
               pos3 = -(i * 2);
               break;
             }
@@ -347,9 +347,9 @@ export default defineComponent({
         var city = this.$refs.city;
         if (
           this.pData1[endVal] &&
-          this.selectData.data2[this.pData1[endVal].value]
+          this.selectData.data2[this.pData1[endVal]["value"]]
         ) {
-          this.pData2 = this.selectData.data2[this.pData1[endVal].value];
+          this.pData2 = this.selectData.data2[this.pData1[endVal]["value"]];
         } else {
           this.pData2 = [];
         }
@@ -360,14 +360,14 @@ export default defineComponent({
     },
     resetData3(endVal: any) {
       this.$nextTick(() => {
-        var county = this.$refs.county;
+        let county = this.$refs.county as HTMLElement;
         if (this.pData2.length > 0 && this.pData2[endVal]) {
-          this.pData3 = this.selectData.data3[this.pData2[endVal].value];
+          this.pData3 = this.selectData.data3[this.pData2[endVal]["value"]];
         } else {
           this.pData3 = [];
         }
         this.selects.select3 = this.pData3[0];
-        county.setAttribute("top", 0);
+        county.setAttribute("top", "0");
         county.style["-webkit-transform"] = "translate3d(0, 0, 0)";
       });
     },
@@ -380,12 +380,12 @@ export default defineComponent({
         this.pData1 = this.selectData.data1;
         this.pData2 =
           this.pData1.length > 0
-            ? this.selectData.data2[this.pData1[0].value]
+            ? this.selectData.data2[this.pData1[0]["value"]]
             : [];
         if (this.columns === 3) {
           this.pData3 =
             this.pData2.length > 0
-              ? this.selectData.data3[this.pData2[0].value]
+              ? this.selectData.data3[this.pData2[0]["value"]]
               : [];
         }
       }
