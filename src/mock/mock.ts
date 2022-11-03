@@ -1,6 +1,6 @@
-const Mock = require("mockjs");
 /** eslint-disable */
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const Mock = require("mockjs");
 const hotData = {
   status: 0,
   data: [

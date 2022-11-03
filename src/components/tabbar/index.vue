@@ -40,7 +40,7 @@
 import { computed, ref, getCurrentInstance } from "vue";
 import { useStore } from "vuex";
 export default {
-  name: "tabbar",
+  name: "tabBar",
   setup(props, context) {
     const { attrs, emit, slots } = context;
     const currentInstance = getCurrentInstance();

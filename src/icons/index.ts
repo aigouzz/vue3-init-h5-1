@@ -5,7 +5,7 @@
  * @LastEditors: aig
  * @FilePath: /vue3-init-h5-1/src/icons/index.js
  */
-import SvgIcon from "@/components/SvgIcon.vue";
+import SvgIcon from "@/components/SvgIcon/index.vue";
 
 const requireAll = (requireContext: any) => {
   requireContext.keys().map(requireContext);

@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "popup",
+  name: "popUp",
   props: {
     popupShow: {
       type: Boolean,

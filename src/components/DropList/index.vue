@@ -35,21 +35,31 @@ export default {
   props: ["config"],
   data() {
     return {
-      top: (this.config.position && this.config.position.top) || null,
-      right: (this.config.position && this.config.position.right) || null,
-      bottom: (this.config.position && this.config.position.bottom) || null,
-      left: (this.config.position && this.config.position.left) || null,
-      width: this.config.width || null,
-      list: this.config.list || [],
-      isShow: this.config.isShow || false,
+      top:
+        ((this as any).config.position && (this as any).config.position.top) ||
+        null,
+      right:
+        ((this as any).config.position &&
+          (this as any).config.position.right) ||
+        null,
+      bottom:
+        ((this as any).config.position &&
+          (this as any).config.position.bottom) ||
+        null,
+      left:
+        ((this as any).config.position && (this as any).config.position.left) ||
+        null,
+      width: (this as any).config.width || null,
+      list: (this as any).config.list || [],
+      isShow: (this as any).config.isShow || false,
     };
   },
   methods: {
     show() {
-      this.isShow = true;
+      (this as any).isShow = true;
     },
     hidden() {
-      this.isShow = false;
+      (this as any).isShow = false;
     },
     Action(item: any) {
       item.action(item);
