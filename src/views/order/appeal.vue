@@ -5,7 +5,7 @@
         <svg-icon icon-class="white-btn"></svg-icon>
       </span>
       <div class="header-content">商品申诉</div>
-      <router-link class="appeal-record" to="/order/appealRecord" tag="span"
+      <router-link class="appeal-record" to="/order/appealRecord" slots="span"
         >申诉记录</router-link
       >
     </header>
@@ -71,7 +71,7 @@
 
 <script>
 export default {
-  name: "Appeal",
+  name: "indexAppeal",
   data() {
     return {
       username: "",
@@ -80,7 +80,7 @@ export default {
       fileList: [],
     };
   },
-  created() {},
+  // created() {},
   methods: {},
 };
 </script>

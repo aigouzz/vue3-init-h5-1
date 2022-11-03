@@ -12,23 +12,23 @@
           <img src="../../assets/image/product/share-apply.png" />
           <span class="node-text">分享节点</span>
         </li>
-        <router-link tag="li" to="/node/areaNode" class="list-item">
+        <router-link slots="li" to="/node/areaNode" class="list-item">
           <img src="../../assets/image/product/area-node.png" />
           <span class="node-text">区域节点</span>
         </router-link>
-        <router-link tag="li" to="/node/cityNode" class="list-item">
+        <router-link slots="li" to="/node/cityNode" class="list-item">
           <img src="../../assets/image/product/municipal-node.png" />
           <span class="node-text">城市节点</span>
         </router-link>
-        <router-link tag="li" to="/node/stateNode" class="list-item">
+        <router-link slots="li" to="/node/stateNode" class="list-item">
           <img src="../../assets/image/product/state-node.png" />
           <span class="node-text">州级节点</span>
         </router-link>
-        <router-link tag="li" to="/node/industryNode" class="list-item">
+        <router-link slots="li" to="/node/industryNode" class="list-item">
           <img src="../../assets/image/product/industry-node.png" />
           <span class="node-text">行业节点</span>
         </router-link>
-        <router-link tag="li" to="/node/superNode" class="list-item">
+        <router-link slots="li" to="/node/superNode" class="list-item">
           <img src="../../assets/image/product/super-node.png" />
           <span class="node-text">超级节点</span>
         </router-link>
@@ -80,12 +80,12 @@
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside";
+// import ClickOutside from "vue-click-outside";
 export default {
   name: "NodeApplication",
-  directives: {
-    ClickOutside,
-  },
+  // directives: {
+  //   ClickOutside,
+  // },
   data() {
     return {
       show: false,
@@ -114,7 +114,7 @@ export default {
       },
     };
   },
-  created() {},
+  // created() {},
   methods: {
     // handleGoToArea(){
 

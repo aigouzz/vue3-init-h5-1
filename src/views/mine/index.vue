@@ -31,23 +31,23 @@
       </ul>
     </section>
     <section class="order-all">
-      <router-link to="/order" class="look-orders" tag="span"
+      <router-link to="/order" class="look-orders" slots="span"
         >查看全部订单>></router-link
       >
       <ul class="order-list">
-        <router-link to="/order/orderDetail" class="order-item" tag="li">
+        <router-link to="/order/orderDetail" class="order-item" slots="li">
           <svg-icon icon-class="pending-pay"></svg-icon>
           <span>待付款</span>
         </router-link>
-        <router-link to="/order/toBeDelivered" class="order-item" tag="li">
+        <router-link to="/order/toBeDelivered" class="order-item" slots="li">
           <svg-icon icon-class="be-delivered"></svg-icon>
           <span>待发货</span>
         </router-link>
-        <router-link to="/order/pendingReceipt" class="order-item" tag="li">
+        <router-link to="/order/pendingReceipt" class="order-item" slots="li">
           <svg-icon icon-class="pending-receipt"></svg-icon>
           <span>待收货</span>
         </router-link>
-        <router-link to="/order" class="order-item" tag="li">
+        <router-link to="/order" class="order-item" slots="li">
           <svg-icon icon-class="all-orders"></svg-icon>
           <span>退换/售后</span>
         </router-link>
@@ -56,21 +56,21 @@
 
     <section class="mine-content">
       <ul class="options-list">
-        <router-link to="wallet/myWallet" class="option-item" tag="li">
+        <router-link to="wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="my-assets"></svg-icon>
             <span>我的钱包</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
-        <router-link to="/node/nodeApplication" class="option-item" tag="li">
+        <router-link to="/node/nodeApplication" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="node-application"></svg-icon>
             <span>节点申请</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
-        <router-link to="/wallet/myWallet" class="option-item" tag="li">
+        <router-link to="/wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon
               class="incon"
@@ -80,7 +80,7 @@
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
-        <router-link to="/wallet/myWallet" class="option-item" tag="li">
+        <router-link to="/wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="sharing-links"></svg-icon>
             <span>分享链接</span>
@@ -92,28 +92,28 @@
 
     <section class="mine-content">
       <ul class="options-list">
-        <router-link to="/mine/shippingAddress" class="option-item" tag="li">
+        <router-link to="/mine/shippingAddress" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="shipping-address"></svg-icon>
             <span>收货地址</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
-        <router-link to="/mine/messageCenter" class="option-item" tag="li">
+        <router-link to="/mine/messageCenter" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="message-center"></svg-icon>
             <span>消息中心</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/helpCenter" class="option-item" tag="li">
+        <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="help-center"></svg-icon>
             <span>帮助中心</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/setting" class="option-item" tag="li">
+        <router-link to="/mine/setting" class="option-item" slots="li">
           <div class="item-info">
             <svg-icon class="incon" icon-class="setting"></svg-icon>
             <span>设置</span>
@@ -198,7 +198,7 @@
 <script>
 import { ref, onMounted, getCurrentInstance } from "vue";
 export default {
-  name: "mine",
+  name: "indexMine",
   setup() {
     const show = ref(false);
     const columns = ref(1);

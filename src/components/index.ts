@@ -13,8 +13,8 @@ function capitalizeFirstLetter(str: string) {
 function validateFileName(str: string) {
   return (
     /^\S+\.vue$/.test(str) &&
-    str.replace(/^\S+\/(\w+)\.vue$/, (match, $1) => {
-      capitalizeFirstLetter($1);
+    str.replace(/^(\S+\/)(\w+)(\.vue)$/, (match, $1, $2, $3) => {
+      return $1 + capitalizeFirstLetter($2) + $3;
     })
   );
 }

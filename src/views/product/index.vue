@@ -56,17 +56,26 @@
         <van-field label="发货地" left-icon="location-o" disabled></van-field>
       </li>
       <li class="item-info" @click="showPopup">
-        <van-field label="选择" disabled placeholder="选择颜色分类，尺码 "></van-field>
+        <van-field
+          label="选择"
+          disabled
+          placeholder="选择颜色分类，尺码 "
+        ></van-field>
         <van-icon name="arrow" />
       </li>
       <li class="store-info">
         <div class="store-detail" @click="handleStoreName">
-          <img src="../../assets/image/product/store-header.png" class="store-header" />
+          <img
+            src="../../assets/image/product/store-header.png"
+            class="store-header"
+          />
           <span class="store-name">店铺名称</span>
         </div>
         <div class="store-btn">
           <svg-icon icon-class="message-round"></svg-icon>
-          <van-button size="small" @click="handleConnectStore" type="danger">进店逛逛</van-button>
+          <van-button size="small" @click="handleConnectStore" type="danger"
+            >进店逛逛</van-button
+          >
         </div>
       </li>
     </ul>
@@ -123,21 +132,41 @@
           </li>
           <li class="popup-quantity">
             <span class="quantity-text">购买数量</span>
-            <van-stepper v-model="stepperValue" input-width="31px" button-size="12px" />
+            <van-stepper
+              v-model="stepperValue"
+              input-width="31px"
+              button-size="12px"
+            />
           </li>
         </ul>
       </section>
       <div class="product-footer">
         <van-action-bar>
-          <van-action-bar-button @click="handleAddToCart" type="warning" text="加入购物车" />
-          <van-action-bar-button type="danger" @click="handleToBuy" text="立即购买" />
+          <van-action-bar-button
+            @click="handleAddToCart"
+            type="warning"
+            text="加入购物车"
+          />
+          <van-action-bar-button
+            type="danger"
+            @click="handleToBuy"
+            text="立即购买"
+          />
         </van-action-bar>
       </div>
     </van-popup>
     <div class="product-footer">
       <van-action-bar>
-        <van-action-bar-button @click="handleAddToCart" type="warning" text="加入购物车" />
-        <van-action-bar-button type="danger" @click="handleToBuy" text="立即购买" />
+        <van-action-bar-button
+          @click="handleAddToCart"
+          type="warning"
+          text="加入购物车"
+        />
+        <van-action-bar-button
+          type="danger"
+          @click="handleToBuy"
+          text="立即购买"
+        />
       </van-action-bar>
     </div>
   </div>
@@ -147,7 +176,7 @@
 import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
 export default {
-  name: "product",
+  name: "indexProduct",
 
   setup() {
     const { ctx } = getCurrentInstance();
@@ -162,29 +191,29 @@ export default {
         {
           imgSrc: "http://gankai.gitee.io/vue-jd-h5/img/store3.cc632dc8.png",
           colorName: "黑色",
-          selected: false
+          selected: false,
         },
         {
           imgSrc: "http://gankai.gitee.io/vue-jd-h5/img/store3.cc632dc8.png",
           colorName: "黑色",
-          selected: false
+          selected: false,
         },
         {
           imgSrc: "http://gankai.gitee.io/vue-jd-h5/img/store3.cc632dc8.png",
           colorName: "黑色",
-          selected: false
+          selected: false,
         },
         {
           imgSrc: "http://gankai.gitee.io/vue-jd-h5/img/store3.cc632dc8.png",
           colorName: "黑色",
-          selected: false
+          selected: false,
         },
         {
           imgSrc: "http://gankai.gitee.io/vue-jd-h5/img/store3.cc632dc8.png",
           colorName: "黑色",
-          selected: false
-        }
-      ]
+          selected: false,
+        },
+      ],
     });
 
     const isSpike = ref(false);
@@ -214,13 +243,13 @@ export default {
       ctx.$toast.success({
         message: "添加成功~",
         duration: 1500,
-        icon: "like-o"
+        icon: "like-o",
       });
     };
 
-    const handleSelected = item => {
+    const handleSelected = (item) => {
       item.selected = true;
-      state.listData.map(it => {
+      state.listData.map((it) => {
         it == item ? (it.selected = true) : (it.selected = false);
       });
     };
@@ -245,9 +274,9 @@ export default {
       handleConnectStore,
       handleStoreName,
       handleToBuy,
-      handleSelected
+      handleSelected,
     };
-  }
+  },
 };
 </script>
 

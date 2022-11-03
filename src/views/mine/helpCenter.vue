@@ -13,7 +13,7 @@
             <svg-icon icon-class="product-help"></svg-icon>
             <span>产品帮助</span>
           </div>
-          <router-link to="/mine/feedback" class="item-title" tag="div">
+          <router-link to="/mine/feedback" class="item-title" slots="div">
             <svg-icon icon-class="feedback-svg"></svg-icon>
             <span>问题反馈</span>
           </router-link>
@@ -36,31 +36,31 @@
             </van-collapse-item>
           </van-collapse>
         </li>
-        <router-link to="/mine/messageCenter" class="option-item" tag="li">
+        <router-link to="/mine/messageCenter" class="option-item" slots="li">
           <div class="item-info">
             <span>支持方式</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/helpCenter" class="option-item" tag="li">
+        <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
             <span>退货换货</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/helpCenter" class="option-item" tag="li">
+        <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
             <span>商家帮助</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/helpCenter" class="option-item" tag="li">
+        <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
             <span>服务承诺</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
-        <router-link to="/mine/helpCenter" class="option-item" tag="li">
+        <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
             <span>联系我们</span>
           </div>

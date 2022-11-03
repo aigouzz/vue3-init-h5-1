@@ -70,7 +70,7 @@
             borderColor: 'rgb(58, 58, 58,.14)',
             color: '#3A3A3A',
             padding: '0 10px',
-            margin: '15px 0'
+            margin: '15px 0',
           }"
           >分享到</van-divider
         >
@@ -122,7 +122,7 @@ export default {
             "高解析度无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳",
           desc: "正品大牌 产家直营",
           price: "¥1988",
-          hotIndex: "99"
+          hotIndex: "99",
         },
         {
           img: require("../../assets/image/premiumRanking/demo0.png"),
@@ -130,7 +130,7 @@ export default {
             "高解析度无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳",
           desc: "正品大牌 产家直营",
           price: "¥1988",
-          hotIndex: "99"
+          hotIndex: "99",
         },
         {
           img: require("../../assets/image/premiumRanking/demo0.png"),
@@ -138,7 +138,7 @@ export default {
             "高解析度无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳",
           desc: "正品大牌 产家直营",
           price: "¥1988",
-          hotIndex: "99"
+          hotIndex: "99",
         },
         {
           img: require("../../assets/image/premiumRanking/demo0.png"),
@@ -146,14 +146,14 @@ export default {
             "高解析度无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳无线蓝牙降噪 头戴耳",
           desc: "正品大牌 产家直营",
           price: "¥1988",
-          hotIndex: "99"
-        }
+          hotIndex: "99",
+        },
       ],
-      tabList: ["3C数码", "进口食品", "生活电器", "家居软饰", "平板电视"]
+      tabList: ["3C数码", "进口食品", "生活电器", "家居软饰", "平板电视"],
     };
   },
-  created() {},
-  methods: {}
+  // created() {},
+  methods: {},
 };
 </script>
 

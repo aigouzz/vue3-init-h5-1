@@ -92,7 +92,6 @@
 
 <script>
 export default {
-  name: "",
   data() {
     return {
       columns: 1,
@@ -125,7 +124,7 @@ export default {
       show: false,
     };
   },
-  created() {},
+  // created() {},
   methods: {
     close() {
       this.show = false;

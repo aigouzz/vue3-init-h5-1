@@ -9,7 +9,11 @@
     <section class="address-content">
       <ul class="address-list">
         <li class="address-item">
-          <router-link tag="div" class="address-name" to="/mine/countryRegion">
+          <router-link
+            slots="div"
+            class="address-name"
+            to="/mine/countryRegion"
+          >
             <van-field v-model="value" disabled placeholder="国家/地区" />
             <div>
               <svg-icon icon-class="arrow"></svg-icon>

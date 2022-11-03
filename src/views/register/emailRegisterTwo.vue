@@ -4,7 +4,10 @@
       <span class="btn-left" @click="$router.go(-1)">
         <svg-icon icon-class="gray-btn"></svg-icon>
       </span>
-      <router-link class="appeal-record" to="/register/phoneRegister" tag="span"
+      <router-link
+        class="appeal-record"
+        to="/register/phoneRegister"
+        slots="span"
         >手机注册</router-link
       >
     </header>
@@ -57,9 +60,9 @@ export default {
       columns: ["杭州", "宁波", "温州", "嘉兴", "湖州"],
     };
   },
-  created() {},
+  // created() {},
   methods: {
-    onConfirm() {},
+    // onConfirm() {},
   },
 };
 </script>

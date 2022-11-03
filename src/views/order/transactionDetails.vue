@@ -37,10 +37,10 @@
         </li>
       </ul>
       <div class="login-register-btns">
-        <router-link class="register-btn" to="/classify" tag="span"
+        <router-link class="register-btn" to="/classify" slots="span"
           >完成</router-link
         >
-        <router-link class="login-btn" to="/storeDetail" tag="span"
+        <router-link class="login-btn" to="/storeDetail" slots="span"
           >返回商家</router-link
         >
       </div>

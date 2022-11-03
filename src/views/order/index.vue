@@ -82,8 +82,10 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link tag="span" to="/order/cancelOrder">取消订单</router-link>
-          <router-link tag="span" to="/order/orderDetail">去支付</router-link>
+          <router-link slots="span" to="/order/cancelOrder"
+            >取消订单</router-link
+          >
+          <router-link slots="span" to="/order/orderDetail">去支付</router-link>
         </li>
       </ul>
     </section>
@@ -118,7 +120,7 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link to="/order/appeal" tag="span">申诉</router-link>
+          <router-link to="/order/appeal" slots="span">申诉</router-link>
         </li>
       </ul>
     </section>
@@ -153,7 +155,7 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link to="/order/appeal" tag="span">申诉</router-link>
+          <router-link to="/order/appeal" slots="span">申诉</router-link>
         </li>
       </ul>
     </section>
@@ -188,7 +190,7 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link to="/order/appeal" tag="span">申诉</router-link>
+          <router-link to="/order/appeal" slots="span">申诉</router-link>
         </li>
       </ul>
     </section>
@@ -223,10 +225,10 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link to="/order/viewLogistics" tag="span"
+          <router-link to="/order/viewLogistics" slots="span"
             >查看物流</router-link
           >
-          <router-link to="/order/appeal" tag="span">商品申诉</router-link>
+          <router-link to="/order/appeal" slots="span">商品申诉</router-link>
         </li>
       </ul>
     </section>
@@ -261,10 +263,10 @@
           <i>$496</i>
         </li>
         <li class="order-btn">
-          <router-link to="/order/viewLogistics" tag="span"
+          <router-link to="/order/viewLogistics" slots="span"
             >查看物流</router-link
           >
-          <router-link to="/order/appeal" tag="span">商品申诉</router-link>
+          <router-link to="/order/appeal" slots="span">商品申诉</router-link>
         </li>
       </ul>
     </section>
@@ -314,7 +316,7 @@
 import ListScroll from "@/components/scroll/ListScroll";
 import { getCurrentInstance, onMounted, reactive, ref, toRefs } from "vue";
 export default {
-  name: "Order",
+  name: "indexOrder",
   components: {
     ListScroll,
   },

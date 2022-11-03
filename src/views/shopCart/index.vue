@@ -19,7 +19,7 @@
           <p>去看看心仪的商品吧~</p>
         </li>
         <li class="item-btn">
-          <router-link to="/classify" class="hairline-btn" tag="span"
+          <router-link to="/classify" class="hairline-btn" slots="span"
             >立即去购物</router-link
           >
         </li>

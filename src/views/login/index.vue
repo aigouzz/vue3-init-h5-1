@@ -46,7 +46,7 @@
 import { reactive, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
 export default {
-  name: "login",
+  name: "indexLogin",
 
   setup() {
     const $router = useRouter();
@@ -55,8 +55,12 @@ export default {
       emailPhone: "",
       password: "",
     });
-    const handleUserLogin = () => {};
-    const handleUserRegister = () => {};
+    const handleUserLogin = () => {
+      return false;
+    };
+    const handleUserRegister = () => {
+      return false;
+    };
 
     return {
       $router,

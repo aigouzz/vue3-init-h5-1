@@ -34,7 +34,7 @@ const routes = [
   },
 ];
 
-const routerContext = require.context("./modules", true, /\.js$/);
+const routerContext = require.context("./modules", true, /\.ts$/);
 routerContext.keys().forEach((route) => {
   const routerModule = routerContext(route);
   indexRouter.children = indexRouter.children.concat(

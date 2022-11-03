@@ -32,26 +32,26 @@
 
     <section class="home-tags">
       <ul class="tags-content">
-        <router-link tag="li" class="tags-item" to="./search">
+        <router-link slots="li" class="tags-item" to="./search">
           <svg-icon
             class="tags-icon"
             icon-class="chain-cat-boutique"
           ></svg-icon>
           <span class="item-text">链猫精品</span>
         </router-link>
-        <router-link tag="li" class="tags-item" to="./search">
+        <router-link slots="li" class="tags-item" to="./search">
           <svg-icon class="tags-icon" icon-class="cm-area"></svg-icon>
           <span class="item-text">CM专区</span>
         </router-link>
-        <router-link tag="li" class="tags-item" to="./search">
+        <router-link slots="li" class="tags-item" to="./search">
           <svg-icon class="tags-icon" icon-class="collar-cm"></svg-icon>
           <span class="item-text">领CM币</span>
         </router-link>
-        <router-link tag="li" class="tags-item" to="./search">
+        <router-link slots="li" class="tags-item" to="./search">
           <svg-icon class="tags-icon" icon-class="coupon-svg"></svg-icon>
           <span class="item-text">领券</span>
         </router-link>
-        <router-link tag="li" class="tags-item" to="./search">
+        <router-link slots="li" class="tags-item" to="./search">
           <svg-icon class="tags-icon" icon-class="chain-cat-member"></svg-icon>
           <span class="item-text">链猫会员</span>
         </router-link>
@@ -60,7 +60,7 @@
 
     <section class="spike-area">
       <ul class="spike-top">
-        <router-link class="top-left" to="/chainCatSpike" tag="li">
+        <router-link class="top-left" to="/chainCatSpike" slots="li">
           <div class="item-top">
             <span class="item-title">链猫秒杀</span>
             <div class="time-text">
@@ -103,7 +103,7 @@
             </div>
           </div>
         </router-link>
-        <router-link class="top-right" to="/foundGoodGoods" tag="li">
+        <router-link class="top-right" to="/foundGoodGoods" slots="li">
           <div class="right-header">
             <span class="cat-spike-text">发现好货</span>
             <span class="tag-text">品质好物</span>
@@ -117,22 +117,22 @@
       </ul>
 
       <ul class="spike-center">
-        <router-link class="center-item" to="/specialSpike" tag="li">
+        <router-link class="center-item" to="/specialSpike" slots="li">
           <span class="center-title">特价秒杀</span>
           <span class="center-descr">10元抢购</span>
           <img src="../../assets/image/home/demo6.png" />
         </router-link>
-        <router-link class="center-item" to="/brandSpike" tag="li">
+        <router-link class="center-item" to="/brandSpike" slots="li">
           <span class="center-title">品牌秒杀</span>
           <span class="center-descr" style="color: #dd3749">笔记本秒杀</span>
           <img src="../../assets/image/home/demo7.png" />
         </router-link>
-        <router-link class="center-item" to="/newProductLaunch" tag="li">
+        <router-link class="center-item" to="/newProductLaunch" slots="li">
           <span class="center-title">新品首发</span>
           <span class="center-descr" style="#FC6380">小黑盒新品</span>
           <img src="../../assets/image/home/demo8.png" />
         </router-link>
-        <router-link class="center-item" to="/premiumRanking" tag="li">
+        <router-link class="center-item" to="/premiumRanking" slots="li">
           <span class="center-title">优品排行</span>
           <span class="center-descr" style="color: #91c95b">榜上好物购</span>
           <img src="../../assets/image/home/demo9.png" />
@@ -153,7 +153,7 @@
             <img src="../../assets/image/home/demo11.png" />
           </div>
         </li>
-        <router-link class="bottom-left" to="/loveShop" tag="li">
+        <router-link class="bottom-left" to="/loveShop" slots="li">
           <div class="bottom-left-header">
             <span class="big-buy">爱逛好店</span>
             <span class="goods-name addColor">懂你所要</span>
@@ -193,7 +193,11 @@
           <section class="goods-box search-wrap">
             <ul class="goods-content">
               <li v-for="(item, index) in list.list" :key="index">
-                <router-link class="goods-img" tag="div" to="/classify/product">
+                <router-link
+                  class="goods-img"
+                  slots="div"
+                  to="/classify/product"
+                >
                   <img :src="item.img" />
                 </router-link>
                 <div class="goods-layout">
@@ -240,14 +244,14 @@
 import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";
-import Tabbat from "@/components/tabbar";
+import tabbar from "@/components/tabbar";
 export default {
-  name: "home",
+  name: "indexHome",
   components: {
-    Tabbat,
+    tabbar,
   },
   setup(props, context) {
-    const { ctx } = getCurrentInstance();
+    const ctx = getCurrentInstance();
     const $store = useStore();
     // ctx.$store === $store  ==>true 其实是同一个对象！
 
@@ -266,7 +270,7 @@ export default {
       show: false,
       el: "",
     });
-
+    console.log(ctx);
     ctx.$http.get("http://test.happymmall.com/home/homeData").then((res) => {
       const { images, tabList } = res.data;
       state.tabArray = tabList;

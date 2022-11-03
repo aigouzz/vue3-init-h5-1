@@ -5,7 +5,7 @@
         <svg-icon icon-class="white-btn"></svg-icon>
       </span>
       <div class="header-content">取消原因</div>
-      <router-link class="appeal-record" to="/order/appealRecord" tag="span"
+      <router-link class="appeal-record" to="/order/appealRecord" slots="span"
         >申诉记录</router-link
       >
     </header>
@@ -20,16 +20,16 @@
         <van-radio-group v-model="radio">
           <van-cell-group>
             <van-cell title="想了想，我不想要了" clickable @click="radio = '1'">
-              <van-radio slot="right-icon" checked-color="#91C95B" name="1" />
+              <van-radio slots="right-icon" checked-color="#91C95B" name="1" />
             </van-cell>
             <van-cell title="买多了/买错了" clickable @click="radio = '2'">
-              <van-radio slot="right-icon" checked-color="#91C95B" name="2" />
+              <van-radio slots="right-icon" checked-color="#91C95B" name="2" />
             </van-cell>
             <van-cell title="支付遇到问题" clickable @click="radio = '3'">
-              <van-radio slot="right-icon" checked-color="#91C95B" name="3" />
+              <van-radio slots="right-icon" checked-color="#91C95B" name="3" />
             </van-cell>
             <van-cell title="地址填写错误" clickable @click="radio = '4'">
-              <van-radio slot="right-icon" checked-color="#91C95B" name="4" />
+              <van-radio slots="right-icon" checked-color="#91C95B" name="4" />
             </van-cell>
             <van-cell
               title="其他原因"
@@ -46,7 +46,7 @@
           :autosize="{ maxHeight: 200, minHeight: 120 }"
           placeholder="请输入原因"
         >
-          <span slot="right-icon">{{ remnant }}/100</span>
+          <span slots="right-icon">{{ remnant }}/100</span>
         </van-field>
       </div>
     </section>
@@ -74,7 +74,7 @@ export default {
       radio: "1",
     };
   },
-  created() {},
+  // created() {},
   methods: {
     onChange(picker, value, index) {
       console.log(`当前值：${value}, 当前索引：${index}`);

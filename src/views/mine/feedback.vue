@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: "feedback",
+  name: "feedBack",
   data() {
     return {
       radio: "1",
@@ -53,7 +53,7 @@ export default {
       remnant: 0,
     };
   },
-  created() {},
+  // created() {},
   methods: {
     descInput(value) {
       var txtVal = this.value.length;

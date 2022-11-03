@@ -23,7 +23,7 @@
           <span class="setting-msg">清除缓存</span>
           <van-icon class="icon" name="arrow" />
         </li>
-        <router-link tag="li" class="setting-item" to="/setting/aboutAs">
+        <router-link slots="li" class="setting-item" to="/setting/aboutAs">
           <span class="setting-msg">关于我们</span>
           <van-icon class="icon" name="arrow" />
         </router-link>
@@ -36,7 +36,7 @@
 <script>
 import { ref } from "vue";
 export default {
-  name: "Setting",
+  name: "indexSetting",
   setup() {
     const checked = ref(false);
     return {

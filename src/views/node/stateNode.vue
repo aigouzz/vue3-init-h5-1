@@ -9,7 +9,7 @@
     <section class="area-content">
       <ul class="options-list">
         <li class="option-item">
-          <router-link tag="div" class="item-info" to="/mine/countryRegion">
+          <router-link slots="div" class="item-info" to="/mine/countryRegion">
             <van-field
               v-model="areaNode.country"
               @click="handleShowCountry"
@@ -117,12 +117,12 @@
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside";
+// import ClickOutside from "vue-click-outside";÷
 export default {
   name: "stateNode",
-  directives: {
-    ClickOutside,
-  },
+  // directives: {
+  //   ClickOutside,
+  // },
   data() {
     return {
       show: false,
@@ -183,7 +183,7 @@ export default {
       },
     };
   },
-  created() {},
+  // created() {},
   methods: {
     handleClose() {
       this.showDialog = false;

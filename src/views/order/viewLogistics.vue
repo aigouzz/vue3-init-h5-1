@@ -43,7 +43,7 @@
     <section class="logistics-status">
       <van-steps direction="vertical" active-color="#D8182D" :active="0">
         <van-step>
-          <i slot="active-icon">
+          <i slots="active-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -56,7 +56,7 @@
           </div>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -66,7 +66,7 @@
           <p>【深圳市】快件从深圳龙华区二部发出，正在发往江苏 是连云港三部门</p>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -79,7 +79,7 @@
           </div>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -89,7 +89,7 @@
           <p>【深圳市】快件从深圳龙华区二部发出，正在发往江苏 是连云港三部门</p>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               <i>05/22</i>
               <i>08:28</i>
@@ -102,7 +102,7 @@
           </div>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -114,7 +114,7 @@
           </p>
         </van-step>
         <van-step>
-          <i slot="inactive-icon">
+          <i slots="inactive-icon">
             <span class="logistics-time">
               05/22
               <br />08:28
@@ -137,7 +137,7 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  // created() {},
   methods: {},
 };
 </script>

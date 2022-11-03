@@ -6,7 +6,7 @@
       </span>
       <div class="header-content">链猫秒杀</div>
       <div class="option-btns">
-        <router-link to="/search" class="search-btn" tag="span">
+        <router-link to="/search" class="search-btn" slots="span">
           <svg-icon class="search-icon" icon-class="search"></svg-icon>
         </router-link>
         <span
@@ -32,7 +32,7 @@
         :line-width="0"
       >
         <van-tab v-for="(tab, index) in tabList" :title="tab.name" :key="index">
-          <div class="slot-title" slot="title">
+          <div class="slot-title" slots="title">
             <p class="tab-title">{{ tab.title }}</p>
             <span class="tab-name">{{ tab.name }}</span>
           </div>
@@ -126,12 +126,12 @@
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside";
+// import ClickOutside from "vue-click-outside";
 export default {
   name: "chainCatSpike", // 链猫秒杀,
-  directives: {
-    ClickOutside,
-  },
+  // directives: {
+  //   ClickOutside,
+  // },
   data() {
     return {
       active: "1",
@@ -276,9 +276,11 @@ export default {
       },
     };
   },
-  created() {},
+  // created() {},
   methods: {
-    handleMyReminder() {},
+    handleMyReminder() {
+      return false;
+    },
     handleShare() {
       this.show = true;
     },

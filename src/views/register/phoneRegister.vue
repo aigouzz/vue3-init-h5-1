@@ -4,7 +4,10 @@
       <span class="btn-left" @click="$router.go(-1)">
         <svg-icon icon-class="gray-btn"></svg-icon>
       </span>
-      <router-link class="appeal-record" to="/register/emailRegister" tag="span"
+      <router-link
+        class="appeal-record"
+        to="/register/emailRegister"
+        slots="span"
         >邮箱注册</router-link
       >
     </header>
@@ -30,7 +33,7 @@
           placeholder="验证码"
         >
           <van-button
-            slot="button"
+            slots="button"
             size="small"
             @click="handleGetVerifyCode"
             type="default"
@@ -69,7 +72,7 @@ export default {
       columns: ["杭州", "宁波", "温州", "嘉兴", "湖州"],
     };
   },
-  created() {},
+  // created() {},
   methods: {
     goToNextStep() {
       if (
@@ -87,7 +90,7 @@ export default {
         });
       }
     },
-    handlePhoneBlur() {},
+    // handlePhoneBlur() {},
     handleGetVerifyCode() {
       if (!this.phoneRegisterForm.mobile) {
         this.$toast({

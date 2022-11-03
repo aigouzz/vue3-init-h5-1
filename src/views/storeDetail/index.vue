@@ -92,7 +92,7 @@
       <section class="goods-box">
         <ul class="goods-content">
           <template v-for="(item, index) in likeList" :key="index">
-            <router-link tag="li" to="/classify/product">
+            <router-link slots="li" to="/classify/product">
               <img :src="item.imgSrc" />
               <div class="goods-layout">
                 <div class="goods-title">{{ item.itemTitle }}</div>
@@ -189,7 +189,7 @@ export default {
     },
   },
   computed: {},
-  created() {},
+  // created() {},
   mounted() {
     window.addEventListener("scroll", this.pageScroll);
   },

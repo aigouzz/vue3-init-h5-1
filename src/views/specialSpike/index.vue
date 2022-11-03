@@ -242,11 +242,11 @@ export default {
     return {
       active: "1",
       timeData: 36000000,
-      tabList: ["秒杀", "疯抢", "生活电器", "家居软饰", "平板电视"]
+      tabList: ["秒杀", "疯抢", "生活电器", "家居软饰", "平板电视"],
     };
   },
-  created() {},
-  methods: {}
+  // created() {},
+  // methods: {}
 };
 </script>
 

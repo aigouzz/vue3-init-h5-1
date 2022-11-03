@@ -36,7 +36,7 @@
         </li>
         <li class="order-btn">
           <i>申诉时间:2019-06-01 16:45:34</i>
-          <router-link to="/order/appealDetail" tag="span"
+          <router-link to="/order/appealDetail" slots="span"
             >查看详情</router-link
           >
         </li>
@@ -72,7 +72,7 @@
         </li>
         <li class="order-btn">
           <i>申诉时间:2019-06-01 16:45:34</i>
-          <router-link to="/order/appealDetail" tag="span"
+          <router-link to="/order/appealDetail" slots="span"
             >查看详情</router-link
           >
         </li>
@@ -87,7 +87,7 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  // created() {},
   methods: {},
 };
 </script>

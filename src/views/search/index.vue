@@ -45,21 +45,22 @@
         </div>
       </div>
     </div>
-    <popup
+    <popUp
       :popup-title="popupTitle"
       :popup-show="popupShow"
       @cancelPopup="cancelPopup"
       @confirmPopup="confirmPopup"
-    ></popup>
+    ></popUp>
   </div>
 </template>
 
 <script>
-import popup from "../../components/popup/index";
+import popUp from "../../components/popup/index";
 // import {hotData} from "../../service/getData";
 import { getStore, dedupe, ModalHelper } from "../../utils/util";
 import { mapState, mapMutations } from "vuex";
 export default {
+  name: "indexSearch",
   data() {
     return {
       searchText: "",
@@ -127,7 +128,7 @@ export default {
     },
   },
   components: {
-    popup,
+    popUp,
   },
 };
 </script>

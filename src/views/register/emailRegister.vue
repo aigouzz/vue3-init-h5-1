@@ -4,7 +4,10 @@
       <span class="btn-left" @click="$router.go(-1)">
         <svg-icon icon-class="gray-btn"></svg-icon>
       </span>
-      <router-link class="appeal-record" to="/register/phoneRegister" tag="span"
+      <router-link
+        class="appeal-record"
+        to="/register/phoneRegister"
+        slots="span"
         >手机注册</router-link
       >
     </header>
@@ -27,7 +30,7 @@
           clearable
           placeholder="邮箱验证码"
         >
-          <van-button slot="button" size="small" type="default"
+          <van-button slots="button" size="small" type="default"
             >获取验证码</van-button
           >
         </van-field>
@@ -35,7 +38,10 @@
       </van-cell-group>
     </section>
     <div class="login-register-btns">
-      <router-link class="login-btn" to="/register/emailRegisterTwo" tag="span"
+      <router-link
+        class="login-btn"
+        to="/register/emailRegisterTwo"
+        slots="span"
         >下一步</router-link
       >
     </div>
@@ -61,11 +67,11 @@ export default {
       columns: ["杭州", "宁波", "温州", "嘉兴", "湖州"],
     };
   },
-  created() {},
+  // created() {},
   methods: {
     // /api/user/getVerifyCode
-    getVerifyCode() {},
-    onConfirm() {},
+    // getVerifyCode() {},
+    // onConfirm() {},
   },
 };
 </script>

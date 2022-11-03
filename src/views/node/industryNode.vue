@@ -103,12 +103,12 @@
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside";
+// import ClickOutside from "vue-click-outside";
 export default {
   name: "industryNode",
-  directives: {
-    ClickOutside,
-  },
+  // directives: {
+  //   ClickOutside,
+  // },
   data() {
     return {
       show: false,
@@ -169,7 +169,7 @@ export default {
       },
     };
   },
-  created() {},
+  // created() {},
   methods: {
     handleClose() {
       this.showDialog = false;

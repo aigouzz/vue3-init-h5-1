@@ -77,7 +77,7 @@
 
 <script>
 export default {
-  name: "",
+  // name: "",
   setup() {
     return {};
   },

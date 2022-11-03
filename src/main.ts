@@ -14,5 +14,6 @@ import { registerPlugins } from "./utils/util";
 
 const plugins = [Vant, store, router, axios, icons, components, eventBus];
 const app = createApp(App);
+app.config.globalProperties.$http = axios;
 app.use(registerPlugins(plugins));
 app.mount("#app");

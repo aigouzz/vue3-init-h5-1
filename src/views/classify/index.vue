@@ -60,7 +60,7 @@ import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
 
 export default {
-  name: "classify",
+  name: "indexClassify",
   components: {
     ListScroll,
   },

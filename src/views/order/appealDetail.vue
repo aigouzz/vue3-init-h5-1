@@ -5,7 +5,7 @@
         <svg-icon icon-class="white-btn"></svg-icon>
       </span>
       <div class="header-content">申诉详情</div>
-      <router-link class="appeal-record" to="/order/appealRecord" tag="span"
+      <router-link class="appeal-record" to="/order/appealRecord" slots="span"
         >申诉记录</router-link
       >
     </header>
@@ -74,7 +74,6 @@
 
 <script>
 export default {
-  name: "",
   data() {
     return {
       username: "某某人",
@@ -83,7 +82,7 @@ export default {
       content: `今天下午，放了学，哥哥今天没上班，我们一起去逛鞋店，我喜欢上了一个帆布鞋，黑色的，89元，哥哥非常疼我，给我买下了这双鞋子。哥哥也要买鞋，他买了一个白鞋，74元，比我的便宜。因为爸爸妈妈今天加班，所以我们只能吃泡面，不过泡面也很好吃。`,
     };
   },
-  created() {},
+  // created() {},
   methods: {},
 };
 </script>
