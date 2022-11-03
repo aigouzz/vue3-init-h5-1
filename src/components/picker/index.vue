@@ -136,7 +136,7 @@ export default defineComponent({
     gearTouchStart(e: any) {
       e.stopPropagation();
       e.preventDefault();
-      var target = e.target;
+      let target = e.target;
       while (target) {
         if (!target.classList.contains("gear")) {
           target = target.parentElement;
@@ -147,7 +147,7 @@ export default defineComponent({
       clearInterval(target["int_" + target.id]);
       target["old_" + target.id] = e.targetTouches[0].screenY;
       target["o_t_" + target.id] = new Date().getTime();
-      var top = target.getAttribute("top");
+      let top = target.getAttribute("top");
       if (top) {
         target["o_d_" + target.id] = parseFloat(top.replace(/em/g, ""));
       } else {
@@ -170,7 +170,7 @@ export default defineComponent({
       }
       target["new_" + target.id] = e.targetTouches[0].screenY;
       target["n_t_" + target.id] = new Date().getTime();
-      var f =
+      let f =
         ((target["new_" + target.id] - target["old_" + target.id]) * 30) /
         window.innerHeight;
       target["pos_" + target.id] = target["o_d_" + target.id] + f;
@@ -184,7 +184,7 @@ export default defineComponent({
     gearTouchEnd(e: any) {
       e.stopPropagation();
       e.preventDefault();
-      var target = e.target;
+      let target = e.target;
       while (target) {
         if (!target.classList.contains("gear")) {
           target = target.parentElement;
@@ -192,7 +192,7 @@ export default defineComponent({
           break;
         }
       }
-      var flag =
+      let flag =
         (target["new_" + target.id] - target["old_" + target.id]) /
         (target["n_t_" + target.id] - target["o_t_" + target.id]);
       if (Math.abs(flag) <= 0.2) {
@@ -248,11 +248,11 @@ export default defineComponent({
       }, 30);
     },
     setGear(target: HTMLElement, val: number) {
-      var endVal = Math.round(val);
+      let endVal = Math.round(val);
       this.setIndex = endVal;
-      var type = target.getAttribute("data-type");
+      let type = target.getAttribute("data-type");
       // 不是联级
-      if (!this.link) {
+      if (!(this as any).link) {
         if (type === "provs") {
           this.selects.select1 = this.pData1[endVal];
         } else if (type === "city") {
@@ -264,15 +264,15 @@ export default defineComponent({
         if (type === "provs") {
           this.selects.select1 = this.pData1[endVal];
           this.resetData2(endVal);
-          if (this.columns === 3) {
+          if ((this as any).columns === 3) {
             this.resetData3(0);
           }
-        } else if (type === "city" && this.columns === 2) {
+        } else if (type === "city" && (this as any).columns === 2) {
           this.selects.select2 = this.pData2[endVal];
-        } else if (type === "city" && this.columns === 3) {
+        } else if (type === "city" && (this as any).columns === 3) {
           this.resetData3(endVal);
           this.selects.select2 = this.pData2[endVal];
-        } else if (this.columns === 3) {
+        } else if ((this as any).columns === 3) {
           this.selects.select3 = this.pData3[endVal];
         }
       }
@@ -285,17 +285,17 @@ export default defineComponent({
         let pos1 = 0;
         let pos2 = 0;
         let pos3 = 0;
-        if (defaultData.length === 0 && this.isRemember) {
-          if (this.columns === 1) {
-            province.style.transform = province.style["-webkit-transform"] =
+        if (defaultData.length === 0 && (this as any).isRemember) {
+          if ((this as any).columns === 1) {
+            province.style.transform = province.style.transform =
               "translate3d(0, 0, 0)";
             province.setAttribute("top", "0em");
-          } else if (this.columns === 2) {
+          } else if ((this as any).columns === 2) {
             city.setAttribute("top", "0em");
-            city.style["-webkit-transform"] = "translate3d(0, 0, 0)";
-          } else if (this.columns === 3) {
+            city.style.transform = "translate3d(0, 0, 0)";
+          } else if ((this as any).columns === 3) {
             county.setAttribute("top", "0em");
-            county.style["-webkit-transform"] = "translate3d(0, 0, 0)";
+            county.style.transform = "translate3d(0, 0, 0)";
           }
           return;
         }
@@ -308,13 +308,13 @@ export default defineComponent({
               break;
             }
           }
-          province.style.transform = province.style["-webkit-transform"] =
+          province.style.transform = province.style.transform =
             "translate3d(0," + pos1 + "em,0)";
           province.setAttribute("top", pos1 + "em");
         }
         if (defaultData[1] && defaultData[1].value) {
-          if (this.link) {
-            this.pData2 = this.selectData.data2[defaultData[0].value];
+          if ((this as any).link) {
+            this.pData2 = (this as any).selectData.data2[defaultData[0].value];
           }
           for (let i = 0, len = this.pData2.length; i < len; i++) {
             if (this.pData2[i]["value"] == defaultData[1].value) {
@@ -324,11 +324,11 @@ export default defineComponent({
           }
           this.selects.select2 = defaultData[1];
           city.setAttribute("top", pos2 + "em");
-          city.style["-webkit-transform"] = "translate3d(0," + pos2 + "em,0)";
+          city.style.transform = "translate3d(0," + pos2 + "em,0)";
         }
         if (defaultData[2] && defaultData[2].value) {
-          if (this.link) {
-            this.pData3 = this.selectData.data3[defaultData[1].value];
+          if ((this as any).link) {
+            this.pData3 = (this as any).selectData.data3[defaultData[1].value];
           }
           for (let i = 0, len = this.pData3.length; i < len; i++) {
             if (this.pData3[i]["value"] == defaultData[2].value) {
@@ -338,63 +338,67 @@ export default defineComponent({
           }
           this.selects.select3 = defaultData[2];
           county.setAttribute("top", pos3 + "em");
-          county.style["-webkit-transform"] = "translate3d(0," + pos3 + "em,0)";
+          county.style.transform = "translate3d(0," + pos3 + "em,0)";
         }
       });
     },
     resetData2(endVal: any) {
       this.$nextTick(() => {
-        var city = this.$refs.city as HTMLElement;
+        let city = this.$refs.city as HTMLElement;
         if (
           this.pData1[endVal] &&
-          this.selectData.data2[this.pData1[endVal]["value"]]
+          (this as any).selectData.data2[this.pData1[endVal]["value"]]
         ) {
-          this.pData2 = this.selectData.data2[this.pData1[endVal]["value"]];
+          this.pData2 = (this as any).selectData.data2[
+            this.pData1[endVal]["value"]
+          ];
         } else {
           this.pData2 = [];
         }
         this.selects.select2 = this.pData2[0];
         city.setAttribute("top", "0");
-        city.style["-webkit-transform"] = "translate3d(0, 0, 0)";
+        city.style.transform = "translate3d(0, 0, 0)";
       });
     },
     resetData3(endVal: any) {
       this.$nextTick(() => {
         let county = this.$refs.county as HTMLElement;
         if (this.pData2.length > 0 && this.pData2[endVal]) {
-          this.pData3 = this.selectData.data3[this.pData2[endVal]["value"]];
+          this.pData3 = (this as any).selectData.data3[
+            (this as any).pData2[endVal]["value"]
+          ];
         } else {
           this.pData3 = [];
         }
         this.selects.select3 = this.pData3[0];
         county.setAttribute("top", "0");
-        county.style["-webkit-transform"] = "translate3d(0, 0, 0)";
+        county.style.transform = "translate3d(0, 0, 0)";
       });
     },
     init() {
-      if (!this.link) {
-        this.pData1 = this.selectData.data1 || [];
-        this.pData2 = this.selectData.data2 || [];
-        this.pData3 = this.selectData.data3 || [];
+      if (!(this as any).link) {
+        this.pData1 = (this as any).selectData.data1 || [];
+        this.pData2 = (this as any).selectData.data2 || [];
+        this.pData3 = (this as any).selectData.data3 || [];
       } else {
-        this.pData1 = this.selectData.data1;
+        this.pData1 = (this as any).selectData.data1;
         this.pData2 =
           this.pData1.length > 0
-            ? this.selectData.data2[this.pData1[0]["value"]]
+            ? (this as any).selectData.data2[this.pData1[0]["value"]]
             : [];
-        if (this.columns === 3) {
+        if ((this as any).columns === 3) {
           this.pData3 =
             this.pData2.length > 0
-              ? this.selectData.data3[this.pData2[0]["value"]]
+              ? (this as any).selectData.data3[this.pData2[0]["value"]]
               : [];
         }
       }
-      if (this.columns === 1) {
+      if ((this as any).columns === 1) {
         this.selects.select1 = this.pData1[0];
-      } else if (this.columns === 2) {
+      } else if ((this as any).columns === 2) {
         this.selects.select1 = this.pData1[0];
         this.selects.select2 = this.pData2[0];
-      } else if (this.columns === 3) {
+      } else if ((this as any).columns === 3) {
         this.selects.select1 = this.pData1[0];
         this.selects.select2 = this.pData2[0];
         this.selects.select3 = this.pData3[0];
@@ -411,13 +415,11 @@ export default defineComponent({
       },
       deep: true,
     },
-    show: {
-      handler() {
-        if (this.show) {
-          this.isOpened += 1;
-          this.setTop(this.defaultData || []);
-        }
-      },
+    show() {
+      if ((this as any).show) {
+        this.isOpened += 1;
+        this.setTop((this as any).defaultData);
+      }
     },
   },
 });
