@@ -137,7 +137,7 @@ export default defineComponent({
       e.stopPropagation();
       e.preventDefault();
       var target = e.target;
-      while (true) {
+      while (target) {
         if (!target.classList.contains("gear")) {
           target = target.parentElement;
         } else {
@@ -344,7 +344,7 @@ export default defineComponent({
     },
     resetData2(endVal: any) {
       this.$nextTick(() => {
-        var city = this.$refs.city;
+        var city = this.$refs.city as HTMLElement;
         if (
           this.pData1[endVal] &&
           this.selectData.data2[this.pData1[endVal]["value"]]
@@ -354,7 +354,7 @@ export default defineComponent({
           this.pData2 = [];
         }
         this.selects.select2 = this.pData2[0];
-        city.setAttribute("top", 0);
+        city.setAttribute("top", "0");
         city.style["-webkit-transform"] = "translate3d(0, 0, 0)";
       });
     },
@@ -412,7 +412,7 @@ export default defineComponent({
       deep: true,
     },
     show: {
-      handler(): void {
+      handler() {
         if (this.show) {
           this.isOpened += 1;
           this.setTop(this.defaultData || []);
