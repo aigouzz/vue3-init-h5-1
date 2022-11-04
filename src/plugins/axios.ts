@@ -123,8 +123,4 @@ instance.interceptors.response.use(
   }
 );
 
-export default {
-  install(app: { config: { globalProperties: { $http: AxiosInstance } } }) {
-    app.config.globalProperties.$http = instance;
-  },
-};
+export default instance;

@@ -245,6 +245,7 @@ import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";
 import tabbar from "@/components/tabbar";
+import { getHomeData } from "@/plugins/request";
 export default {
   name: "indexHome",
   components: {
@@ -271,7 +272,7 @@ export default {
       el: "",
     });
     console.log(ctx);
-    ctx.$http.get("http://test.happymmall.com/home/homeData").then((res) => {
+    getHomeData().then((res) => {
       const { images, tabList } = res.data;
       state.tabArray = tabList;
       state.homeImgs = images;
