@@ -45,11 +45,11 @@ export default {
     const { attrs, emit, slots } = context;
     const currentInstance = getCurrentInstance();
 
-    const { ctx } = currentInstance;
+    const { proxy } = currentInstance;
     const active = ref(0);
     const store = useStore();
 
-    ctx.$eventBus.$on(
+    proxy.$eventBus.$on(
       "changeTag",
       (tag) => {
         active.value = tag;

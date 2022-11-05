@@ -146,7 +146,7 @@
       @cancel="close"
       @confirm="confirmFn"
     ></vue-pickers>
-    <tabbar></tabbar>
+    <tabBar></tabBar>
   </div>
 </template>
 
@@ -156,7 +156,7 @@ import { useRouter } from "vue-router";
 export default {
   name: "shopCart",
   setup() {
-    const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
     const $router = useRouter();
 
     const clearCart = ref(false);
@@ -172,7 +172,7 @@ export default {
 
     const confirmFn = () => {
       show.value = false;
-      ctx.$toast.loading({
+      proxy.$toast.loading({
         mask: true,
         duration: 1000, // 持续展示 toast
         forbidClick: true, // 禁用背景点击
@@ -186,7 +186,7 @@ export default {
     };
 
     const submitDelete = async () => {
-      await ctx.$dialog.confirm({
+      await proxy.$dialog.confirm({
         message: "确认删除这些商品？",
         confirmButtonColor: "#D8182D",
         cancelButtonColor: "#D8182D",
@@ -203,7 +203,7 @@ export default {
     };
 
     onMounted(() => {
-      ctx.$eventBus.$emit("changeTag", 2);
+      proxy.$eventBus.$emit("changeTag", 2);
     });
 
     return {

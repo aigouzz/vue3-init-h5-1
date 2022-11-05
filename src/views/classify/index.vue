@@ -50,7 +50,7 @@
         </div>
       </list-scroll>
     </section>
-    <tabbar></tabbar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -58,6 +58,7 @@
 import ListScroll from "@/components/scroll/ListScroll";
 import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
+import { getClassifyData } from "@/plugins/request";
 
 export default {
   name: "indexClassify",
@@ -65,7 +66,7 @@ export default {
     ListScroll,
   },
   setup(props) {
-    const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
     const $router = useRouter();
 
     const searchWrap = ref(null);
@@ -90,10 +91,8 @@ export default {
 
     onMounted(async () => {
       setSearchWrapHeight();
-      ctx.$eventBus.$emit("changeTag", 1);
-      const { data } = await ctx.$http.get(
-        "http://test.happymmall.com/category/categoryData"
-      );
+      proxy.$eventBus.$emit("changeTag", 1);
+      const { data } = await getClassifyData();
       const { categoryData } = data;
       state.categoryDatas = categoryData;
     });

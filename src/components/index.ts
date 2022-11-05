@@ -14,7 +14,7 @@ function validateFileName(str: string) {
   return (
     /^\S+\.vue$/.test(str) &&
     str.replace(/^(\S+\/)(\w+)(\.vue)$/, (match, $1, $2, $3) => {
-      return $1 + capitalizeFirstLetter($2) + $3;
+      return capitalizeFirstLetter($2);
     })
   );
 }
@@ -31,6 +31,7 @@ export default {
         (fileName as string).toLowerCase() === "index"
           ? capitalizeFirstLetter(componentConfig.default.name)
           : fileName;
+      console.log(componentName);
       app.component(componentName, componentConfig.default || componentConfig);
     });
   },

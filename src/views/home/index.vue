@@ -271,7 +271,7 @@ export default {
       show: false,
       el: "",
     });
-    console.log(ctx);
+    console.log(ctx.proxy);
     console.log(context);
     getHomeData().then((res) => {
       const { images, tabList } = res.data;
@@ -280,7 +280,7 @@ export default {
     });
 
     onMounted(() => {
-      ctx.$eventBus.$emit("changeTag", 0);
+      ctx.proxy.$eventBus.$emit("changeTag", 0);
       window.addEventListener("scroll", pageScroll);
     });
 
