@@ -191,7 +191,7 @@
         </div>
       </article>
     </van-dialog>
-    <tabbar></tabbar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -202,7 +202,7 @@ export default {
   setup() {
     const show = ref(false);
     const columns = ref(1);
-    const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
 
     const handleClose = () => {
       show.value = false;
@@ -213,7 +213,7 @@ export default {
     };
 
     onMounted(() => {
-      ctx.$eventBus.$emit("changeTag", 3);
+      proxy.$eventBus.$emit("changeTag", 3);
     });
 
     return { show, columns, toShow, handleClose };

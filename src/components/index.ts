@@ -31,7 +31,7 @@ export default {
         (fileName as string).toLowerCase() === "index"
           ? capitalizeFirstLetter(componentConfig.default.name)
           : fileName;
-      console.log(componentName);
+      // console.log(componentName);
       app.component(componentName, componentConfig.default || componentConfig);
     });
   },

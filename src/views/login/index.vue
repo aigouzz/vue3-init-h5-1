@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <header class="page-header">
-      <span class="btn-left" @click="$router.go(-1)">
+      <span class="btn-left" @click="router.go(-1)">
         <svg-icon icon-class="close-popup"></svg-icon>
       </span>
     </header>
@@ -14,7 +14,7 @@
           v-model="loginForm.emailPhone"
           clearable
           placeholder="手机/邮箱"
-          @click-right-icon="$toast('question')"
+          @click-right-icon="toast('question')"
         />
         <van-field
           v-model="loginForm.password"
@@ -49,13 +49,14 @@ export default {
   name: "indexLogin",
 
   setup() {
-    const $router = useRouter();
-    const { ctx } = getCurrentInstance();
+    const router = useRouter();
+    const { proxy } = getCurrentInstance();
     const loginForm = reactive({
       emailPhone: "",
       password: "",
     });
     const handleUserLogin = () => {
+      router.push("/");
       return false;
     };
     const handleUserRegister = () => {
@@ -63,10 +64,10 @@ export default {
     };
 
     return {
-      $router,
+      router,
       loginForm,
       handleUserRegister,
-      $toast: ctx.$toast,
+      toast: proxy.$toast,
       handleUserLogin,
     };
   },

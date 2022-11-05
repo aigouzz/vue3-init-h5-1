@@ -33,26 +33,23 @@
     <section class="home-tags">
       <ul class="tags-content">
         <router-link slots="li" class="tags-item" to="./search">
-          <svg-icon
-            class="tags-icon"
-            icon-class="chain-cat-boutique"
-          ></svg-icon>
+          <van-icon name="gift"></van-icon>
           <span class="item-text">链猫精品</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <svg-icon class="tags-icon" icon-class="cm-area"></svg-icon>
+          <van-icon name="gift"></van-icon>
           <span class="item-text">CM专区</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <svg-icon class="tags-icon" icon-class="collar-cm"></svg-icon>
+          <van-icon name="gift"></van-icon>
           <span class="item-text">领CM币</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <svg-icon class="tags-icon" icon-class="coupon-svg"></svg-icon>
+          <van-icon name="gift"></van-icon>
           <span class="item-text">领券</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <svg-icon class="tags-icon" icon-class="chain-cat-member"></svg-icon>
+          <van-icon name="gift"></van-icon>
           <span class="item-text">链猫会员</span>
         </router-link>
       </ul>
@@ -236,7 +233,7 @@
         </div>
       </transition>
     </div>
-    <tabbar></tabbar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
@@ -244,15 +241,11 @@
 import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useStore } from "vuex";
 import { useRouter, useRoute } from "vue-router";
-import tabbar from "@/components/tabbar";
 import { getHomeData } from "@/plugins/request";
 export default {
   name: "indexHome",
-  components: {
-    tabbar,
-  },
   setup(props, context) {
-    const ctx = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
     const $store = useStore();
     // ctx.$store === $store  ==>true 其实是同一个对象！
 
@@ -271,8 +264,7 @@ export default {
       show: false,
       el: "",
     });
-    console.log(ctx.proxy);
-    console.log(context);
+
     getHomeData().then((res) => {
       const { images, tabList } = res.data;
       state.tabArray = tabList;
@@ -280,7 +272,7 @@ export default {
     });
 
     onMounted(() => {
-      ctx.proxy.$eventBus.$emit("changeTag", 0);
+      proxy.$eventBus.$emit("changeTag", 0);
       window.addEventListener("scroll", pageScroll);
     });
 
