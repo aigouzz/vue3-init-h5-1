@@ -272,6 +272,7 @@ export default {
       el: "",
     });
     console.log(ctx);
+    console.log(context);
     getHomeData().then((res) => {
       const { images, tabList } = res.data;
       state.tabArray = tabList;

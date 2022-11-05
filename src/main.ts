@@ -15,4 +15,7 @@ const plugins = [Vant, store, router, icons, components, eventBus];
 const app = createApp(App);
 // app.config.globalProperties.$http = axios;
 app.use(registerPlugins(plugins));
+app.config.errorHandler = (err, instance, info) => {
+  console.error(instance, err, info);
+};
 app.mount("#app");
