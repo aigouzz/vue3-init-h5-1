@@ -25,7 +25,7 @@
         </li>
       </ul>
     </section>
-    <div v-else>
+    <div v-else class="order-list-1">
       <section class="order-card">
         <van-checkbox v-model="checked" checked-color="#91C95B">
           <li class="checkbox-all">
@@ -296,6 +296,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.order-list-1 {
+  padding-bottom: 120px;
+}
 .shop-cart {
   padding: 0 16px;
   margin-bottom: 100px;

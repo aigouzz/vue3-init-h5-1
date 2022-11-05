@@ -22,4 +22,7 @@ body,
   background-color: #efeff4;
   -webkit-overflow-scrolling: touch;
 }
+.van-icon {
+  font-family: "vant-icon" !important;
+}
 </style>

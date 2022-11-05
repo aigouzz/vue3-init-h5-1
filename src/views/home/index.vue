@@ -9,21 +9,23 @@
   <div class="home">
     <header class="home-header" :class="{ active: headerActive }">
       <div class="header-search">
-        <svg-icon class="search-icon" icon-class="search"></svg-icon>
+        <!-- <svg-icon class="search-icon" icon-class="search"></svg-icon> -->
+        <van-icon name="search"></van-icon>
         <router-link slots="span" class="search-title" to="./search"
           >推荐搜索 关键词</router-link
         >
       </div>
-      <svg-icon
+      <!-- <van-icon name="search"></van-icon> -->
+      <!-- <svg-icon
         class="customer-service-icon"
         icon-class="customer-service"
-      ></svg-icon>
+      ></svg-icon> -->
     </header>
     <van-swipe
       class="swiper-carousel"
       lazy-render
       :autoplay="3000"
-      :show-indicators="false"
+      indicator-color="#ffffff"
     >
       <van-swipe-item v-for="(image, index) in homeImgs" :key="index">
         <img class="lazy_img" @click="handleClick" :src="image.imgUrl" />
@@ -33,24 +35,32 @@
     <section class="home-tags">
       <ul class="tags-content">
         <router-link slots="li" class="tags-item" to="./search">
-          <van-icon name="gift"></van-icon>
-          <span class="item-text">链猫精品</span>
+          <van-icon name="like-o" color="#ff5600" size=".6rem"></van-icon>
+          <span class="item-text">小米精品</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <van-icon name="gift"></van-icon>
+          <van-icon
+            name="cart-circle-o"
+            color="#ff5600"
+            size=".6rem"
+          ></van-icon>
           <span class="item-text">CM专区</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <van-icon name="gift"></van-icon>
+          <van-icon
+            name="shop-collect-o"
+            color="#ff5600"
+            size=".6rem"
+          ></van-icon>
           <span class="item-text">领CM币</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <van-icon name="gift"></van-icon>
+          <van-icon name="vip-card-o" color="#ff5600" size=".6rem"></van-icon>
           <span class="item-text">领券</span>
         </router-link>
         <router-link slots="li" class="tags-item" to="./search">
-          <van-icon name="gift"></van-icon>
-          <span class="item-text">链猫会员</span>
+          <van-icon name="medal-o" color="#ff5600" size=".6rem"></van-icon>
+          <span class="item-text">小米会员</span>
         </router-link>
       </ul>
     </section>
@@ -59,7 +69,7 @@
       <ul class="spike-top">
         <router-link class="top-left" to="/chainCatSpike" slots="li">
           <div class="item-top">
-            <span class="item-title">链猫秒杀</span>
+            <span class="item-title">小米秒杀</span>
             <div class="time-text">
               <span class="eight-time">8点场</span>
               <van-count-down :time="timeData" class="time-count-down">
@@ -126,7 +136,7 @@
         </router-link>
         <router-link class="center-item" to="/newProductLaunch" slots="li">
           <span class="center-title">新品首发</span>
-          <span class="center-descr" style="#FC6380">小黑盒新品</span>
+          <span class="center-descr" style="#FC6380">小米新品</span>
           <img src="../../assets/image/home/demo8.png" />
         </router-link>
         <router-link class="center-item" to="/premiumRanking" slots="li">
