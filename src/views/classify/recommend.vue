@@ -2,7 +2,7 @@
   <div class="recommend">
     <header class="page-header">
       <span class="btn-left" @click="handleGoBack">
-        <img src="../../assets/icons/left-green-white.png" />
+        <van-icon name="arrow-left" size=".4rem" />
       </span>
       <div class="header-content">推荐</div>
     </header>
@@ -133,7 +133,7 @@ export default {
     .btn-left {
       position: fixed;
       left: 16px;
-      background-color: #efeff4;
+      background-color: #fff;
       width: 24px;
       height: 24px;
       display: flex;
@@ -165,9 +165,8 @@ export default {
       line-height: 40px;
       color: #232326;
       background: #fff;
-      .search-icon {
-        line-height: 40px;
-        padding: 8px 10px;
+      .van-icon::before {
+        vertical-align: middle;
       }
       .app-name {
         padding: 0 20px;

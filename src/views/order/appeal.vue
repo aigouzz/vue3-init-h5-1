@@ -2,7 +2,7 @@
   <div class="appeal-page">
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="white-btn"></svg-icon>
+        <van-icon name="arrow-left" size=".4rem" />
       </span>
       <div class="header-content">商品申诉</div>
       <router-link class="appeal-record" to="/order/appealRecord" slots="span"

@@ -2,7 +2,7 @@
   <div class="page-order">
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="white-btn"></svg-icon>
+        <van-icon name="arrow-left" size=".4rem" />
       </span>
       <div class="header-content">我的订单</div>
     </header>

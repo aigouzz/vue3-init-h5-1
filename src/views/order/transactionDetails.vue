@@ -2,7 +2,7 @@
   <div class="transaction-details">
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="green-btn"></svg-icon>
+        <van-icon name="arrow-left" size=".4rem" />
       </span>
       <div class="header-content">交易详情</div>
     </header>
