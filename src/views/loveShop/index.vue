@@ -2,11 +2,11 @@
   <div class="love-shop" id="love-shop">
     <header class="page-header">
       <span class="return-btn" @click="$router.go(-1)">
-        <svg-icon icon-class="transparent-btn"></svg-icon>
+        <van-icon name="arrow-left"></van-icon>
       </span>
       <div class="header-content">爱逛好店</div>
       <span class="share-btn" @click="show = true">
-        <svg-icon icon-class="share-btn"></svg-icon>
+        <van-icon name="share-o" />
       </span>
     </header>
 

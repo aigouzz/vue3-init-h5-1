@@ -10,7 +10,7 @@
   <div class="add-address">
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="green-btn"></svg-icon>
+        <van-icon name="arrow-left" />
       </span>
       <div class="header-content">新增所在地区</div>
     </header>
@@ -37,7 +37,7 @@
           <div class="address-name" @click="show = true">
             <van-field v-model="are" disabled placeholder="请选择省市区" />
             <div>
-              <svg-icon icon-class="arrow"></svg-icon>
+              <van-icon name="arrow" />
             </div>
           </div>
         </li>
@@ -83,7 +83,7 @@ import areaList from "../../mock/area";
 export default {
   name: "addAddress",
   setup() {
-    const { ctx } = getCurrentInstance();
+    // const { ctx } = getCurrentInstance();
     const userName = ref("gk");
     const phoneNum = ref(15797802021);
     const are = ref("gd");

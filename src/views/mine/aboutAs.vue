@@ -2,7 +2,7 @@
   <div class="about-as">
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="gray-btn"></svg-icon>
+        <van-icon name="arrow-left" />
       </span>
       <div class="header-content">关于我们</div>
     </header>

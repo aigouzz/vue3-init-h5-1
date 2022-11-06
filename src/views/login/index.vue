@@ -2,7 +2,7 @@
   <div class="login">
     <header class="page-header">
       <span class="btn-left" @click="router.go(-1)">
-        <svg-icon icon-class="close-popup"></svg-icon>
+        <van-icon name="close"></van-icon>
       </span>
     </header>
     <div class="mall-logo">
