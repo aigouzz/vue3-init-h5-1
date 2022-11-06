@@ -5,7 +5,7 @@
     </span>-->
     <header class="page-header">
       <span class="btn-left" @click="$router.go(-1)">
-        <svg-icon icon-class="green-btn"></svg-icon>
+        <van-icon name="arrow-left" size=".5rem"></van-icon>
       </span>
       <div class="header-content">店铺详情</div>
     </header>
@@ -91,7 +91,7 @@
       </section>
       <section class="goods-box">
         <ul class="goods-content">
-          <template v-for="(item, index) in likeList" :key="index">
+          <li v-for="(item, index) in likeList" :key="index">
             <router-link slots="li" to="/classify/product">
               <img :src="item.imgSrc" />
               <div class="goods-layout">
@@ -105,7 +105,7 @@
                 </div>
               </div>
             </router-link>
-          </template>
+          </li>
         </ul>
       </section>
     </div>
@@ -333,8 +333,7 @@ export default {
         justify-content: space-between;
         flex-wrap: wrap;
         li {
-          display: inline-block;
-          width: 165px;
+          width: 4.5rem;
           border-radius: 8px;
           margin-top: 10px;
           padding-right: 10px;
@@ -344,8 +343,11 @@ export default {
           padding-right: 0;
         }
         .goods-layout {
-          width: 165px;
+          width: 100%;
           padding: 0 10px;
+          img {
+            width: 100%;
+          }
           .goods-title {
             color: #3a3a3a;
             font-size: 14px;

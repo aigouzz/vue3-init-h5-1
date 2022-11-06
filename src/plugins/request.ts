@@ -15,3 +15,7 @@ export function getRecommendListData(value: number) {
 export function getRecommendData() {
   return axios.get("http://test.happymmall.com/home/recommend");
 }
+
+export function getProductData() {
+  return axios.get("http://test.happymmall.com/home/remderImg");
+}

@@ -84,7 +84,7 @@
               05/22
               <br />08:28
             </span>
-            <svg-icon icon-class="point"></svg-icon>
+            <van-icon name="location-o" size=".4rem" />
           </i>
           <p>【深圳市】快件从深圳龙华区二部发出，正在发往江苏 是连云港三部门</p>
         </van-step>
@@ -107,7 +107,7 @@
               05/22
               <br />08:28
             </span>
-            <svg-icon icon-class="point"></svg-icon>
+            <van-icon name="location-o" size=".4rem" />
           </i>
           <p>
             【深圳市】快件从深圳龙华区二部发出，正在发往江苏 是连云港三部门1111
@@ -119,7 +119,7 @@
               05/22
               <br />08:28
             </span>
-            <svg-icon icon-class="shipped"></svg-icon>
+            <van-icon name="underway-o" size=".4rem" />
           </i>
           <div class="normaol-text">
             <h3>快件已发货</h3>

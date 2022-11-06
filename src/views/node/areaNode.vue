@@ -113,7 +113,7 @@
         <li class="coin-pay">
           <div>
             <label>支付</label>
-            <svg-icon v-if="item.icon" :icon-class="item.icon"></svg-icon>
+            <van-icon v-if="item.icon" :name="item.icon"></van-icon>
             {{ item.text }}
           </div>
           <span
@@ -122,7 +122,7 @@
             :class="{ 'active-arrow-down': isActive }"
             v-click-outside="hidden"
           >
-            <svg-icon icon-class="arrow-down"></svg-icon>
+            <van-icon name="down" size=".4rem" />
           </span>
         </li>
         <drop-list

@@ -38,8 +38,8 @@
         </div>
         <div>
           <span class="heart-full" @click="isLike = !isLike">
-            <svg-icon v-if="isLike" icon-class="heart-full"></svg-icon>
-            <svg-icon v-else icon-class="heart-null"></svg-icon>
+            <van-icon v-if="isLike" name="like-o"></van-icon>
+            <van-icon v-else name="like"></van-icon>
           </span>
         </div>
       </li>
@@ -72,7 +72,7 @@
           <span class="store-name">店铺名称</span>
         </div>
         <div class="store-btn">
-          <svg-icon icon-class="message-round"></svg-icon>
+          <van-icon name="star-o"></van-icon>
           <van-button size="small" @click="handleConnectStore" type="danger"
             >进店逛逛</van-button
           >
@@ -91,7 +91,7 @@
     >
       <section class="popup-content">
         <span class="close-icon" @click="show = false">
-          <svg-icon icon-class="close-popup"></svg-icon>
+          <van-icon name="close"></van-icon>
         </span>
         <ul class="popup-top">
           <img src="http://gankai.gitee.io/vue-jd-h5/img/test2.f21b029b.png" />
@@ -175,11 +175,11 @@
 <script>
 import { ref, reactive, onMounted, toRefs, getCurrentInstance } from "vue";
 import { useRouter } from "vue-router";
+import { getProductData } from "@/plugins/request";
 export default {
   name: "indexProduct",
-
   setup() {
-    const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
     const show = ref(false);
     const $router = useRouter();
     const showDetail = ref(false);
@@ -225,9 +225,7 @@ export default {
     };
 
     onMounted(async () => {
-      const { data } = await ctx.$http.get(
-        "http://test.happymmall.com/home/remderImg"
-      );
+      const { data } = await getProductData();
       const { productImages } = data;
       const i = Math.floor(Math.random() * 6);
       productImgs = productImages[i];
@@ -240,7 +238,7 @@ export default {
       $router.push("/order/orderDetail");
     };
     const handleAddToCart = () => {
-      ctx.$toast.success({
+      proxy.$toast.success({
         message: "添加成功~",
         duration: 1500,
         icon: "like-o",

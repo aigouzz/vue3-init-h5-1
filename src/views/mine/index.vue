@@ -36,19 +36,19 @@
       >
       <ul class="order-list">
         <router-link to="/order/orderDetail" class="order-item" slots="li">
-          <svg-icon icon-class="pending-pay"></svg-icon>
+          <van-icon name="cash-back-record" size=".5rem" />
           <span>待付款</span>
         </router-link>
         <router-link to="/order/toBeDelivered" class="order-item" slots="li">
-          <svg-icon icon-class="be-delivered"></svg-icon>
+          <van-icon name="free-postage" size=".5rem" />
           <span>待发货</span>
         </router-link>
         <router-link to="/order/pendingReceipt" class="order-item" slots="li">
-          <svg-icon icon-class="pending-receipt"></svg-icon>
+          <van-icon name="logistics" size=".5rem" />
           <span>待收货</span>
         </router-link>
         <router-link to="/order" class="order-item" slots="li">
-          <svg-icon icon-class="all-orders"></svg-icon>
+          <van-icon name="records" size=".5rem" />
           <span>退换/售后</span>
         </router-link>
       </ul>
@@ -58,31 +58,28 @@
       <ul class="options-list">
         <router-link to="wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="my-assets"></svg-icon>
+            <van-icon name="cash-back-record" size=".5rem" />
             <span>我的钱包</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
         <router-link to="/node/nodeApplication" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="node-application"></svg-icon>
+            <van-icon name="failure" size=".5rem" />
             <span>节点申请</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
         <router-link to="/wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon
-              class="incon"
-              icon-class="businessmen-stationed"
-            ></svg-icon>
+            <van-icon name="shield-o" size=".5rem" />
             <span>商家入驻</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
         <router-link to="/wallet/myWallet" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="sharing-links"></svg-icon>
+            <van-icon name="link-o" size=".5rem" />
             <span>分享链接</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
@@ -94,28 +91,28 @@
       <ul class="options-list">
         <router-link to="/mine/shippingAddress" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="shipping-address"></svg-icon>
+            <van-icon name="tosend" size=".5rem" />
             <span>收货地址</span>
           </div>
           <van-icon name="arrow" color="#DBDBDB" />
         </router-link>
         <router-link to="/mine/messageCenter" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="message-center"></svg-icon>
+            <van-icon name="other-pay" size=".5rem" />
             <span>消息中心</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
         <router-link to="/mine/helpCenter" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="help-center"></svg-icon>
+            <van-icon name="flower-o" size=".5rem" />
             <span>帮助中心</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
         </router-link>
         <router-link to="/mine/setting" class="option-item" slots="li">
           <div class="item-info">
-            <svg-icon class="incon" icon-class="setting"></svg-icon>
+            <van-icon name="add-o" size=".5rem" />
             <span>设置</span>
           </div>
           <van-icon color="#DBDBDB" name="arrow" />
@@ -358,8 +355,8 @@ export default {
           align-items: center;
           font-size: 15px;
           color: #888;
-          .incon {
-            padding-right: 16px;
+          span {
+            margin-left: 10px;
           }
           .header-img {
             width: 50px;
