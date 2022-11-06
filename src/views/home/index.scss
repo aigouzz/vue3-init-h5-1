@@ -304,14 +304,14 @@
         justify-content: space-between;
         flex-wrap: wrap;
         li {
-          display: inline-block;
-          width: 165px;
+          width: 4.5rem;
           margin-top: 10px;
           border-radius: 8px;
           background-color: white;
           box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
           img {
             width: 100%;
+            margin: 0 auto;
           }
         }
         li:nth-of-type(even) {
@@ -319,13 +319,13 @@
         }
         .goods-img {
           img {
-            width: 165px;
-            height: 196px;
+            width: 4.4rem;
+            height: 5.2rem;
             border-radius: 8px 8px 0 0;
           }
         }
         .goods-layout {
-          width: 165px;
+          width: 100%;
           padding: 0 10px;
           display: flex;
           justify-content: flex-start;
@@ -361,8 +361,8 @@
                 font-size: 7px;
                 line-height: 17px;
                 text-align: center;
-                width: 42px;
                 height: 17px;
+                white-space: nowrap;
               }
             }
             .add-icon {

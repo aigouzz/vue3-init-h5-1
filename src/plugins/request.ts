@@ -7,3 +7,11 @@ export function getHomeData() {
 export function getClassifyData() {
   return axios.get("http://test.happymmall.com/category/categoryData");
 }
+
+export function getRecommendListData(value: number) {
+  return axios.get(`/api/goods/list?page=${value}&size=15`);
+}
+
+export function getRecommendData() {
+  return axios.get("http://test.happymmall.com/home/recommend");
+}

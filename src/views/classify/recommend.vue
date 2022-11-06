@@ -8,7 +8,7 @@
     </header>
     <div class="classify-search">
       <div class="header-search" @click="handleSearch">
-        <svg-icon class="search-icon" icon-class="search"></svg-icon>
+        <van-icon name="search"></van-icon>
         <router-link slots="span" class="search-title" to="./search"
           >推荐搜索 关键词</router-link
         >
@@ -26,7 +26,7 @@
         <div>
           <ul class="like-list" v-for="(item, index) in likeList" :key="index">
             <li class="like-item" @click="handleToDetail(item)">
-              <img class="item-picture" v-lazy="item.imagePath" />
+              <img class="item-picture" :src="item.imagePath" />
               <div class="item-detail">
                 <p class="store-info">
                   <img
@@ -53,6 +53,7 @@
 import ListScroll from "@/components/scroll/ListScroll";
 import { useRouter } from "vue-router";
 import { reactive, ref, onMounted, getCurrentInstance, toRefs } from "vue";
+import { getRecommendListData, getRecommendData } from "@/plugins/request";
 
 export default {
   name: "indexRecommend",
@@ -60,7 +61,7 @@ export default {
     ListScroll,
   },
   setup() {
-    const { ctx } = getCurrentInstance();
+    // const { proxy } = getCurrentInstance();
     const state = reactive({
       likeList: [],
       page: 1,
@@ -87,9 +88,7 @@ export default {
     };
 
     const fetchData = async () => {
-      const { data } = await ctx.$http.get(
-        `/api/goods/list?page=${page.value}&size=15`
-      );
+      const { data } = await getRecommendListData(page.value);
       state.likeList.push(...data);
     };
 
@@ -104,9 +103,7 @@ export default {
 
     onMounted(async () => {
       setWrapHeight();
-      const { data } = await ctx.$http.get(
-        "http://test.happymmall.com/home/recommend"
-      );
+      const { data } = await getRecommendData();
       const { data: likes } = data;
       state.likeList = likes;
     });

@@ -208,17 +208,17 @@
                   <img :src="item.img" />
                 </router-link>
                 <div class="goods-layout">
-                  <div class="goods-title">{{ item.productName }}</div>
+                  <div class="goods-title">{{ item.name }}</div>
                   <span class="goods-div">{{ item.title }}</span>
                   <div class="goods-desc">
                     <span class="goods-price">
-                      <i>{{ item.productCnyPrice }}</i>
+                      <i>{{ item.price }}</i>
                       <span class="force-value"
                         >{{ item.forceValue }}倍算力</span
                       >
                     </span>
                     <span class="add-icon" @click="addToCart($event, item)">
-                      <svg-icon icon-class="add"></svg-icon>
+                      <van-icon name="shopping-cart-o" size=".5rem" />
                     </span>
                   </div>
                 </div>
@@ -237,7 +237,7 @@
         <div class="ball" v-if="show">
           <li class="inner">
             <span class="cubeic-add" @click="addToCart($event, item)">
-              <svg-icon class="add-icon" icon-class="add"></svg-icon>
+              <van-icon name="shopping-cart-o" />
             </span>
           </li>
         </div>
