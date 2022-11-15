@@ -1,13 +1,16 @@
 <template>
   <div class="product-layout">
     <van-swipe :autoplay="3000" :height="350">
-      <van-swipe-item v-for="(image, index) in productImgs" :key="index">
+      <van-swipe-item
+        v-for="(image, index) in productImgs"
+        :key="image.imgUrl + index"
+      >
         <img v-if="image.imgUrl" :src="image.imgUrl" />
       </van-swipe-item>
     </van-swipe>
 
     <span class="btn-left" @click="$router.go(-1)">
-      <svg-icon icon-class="green-btn"></svg-icon>
+      <van-icon name="arrow-left" size="20"></van-icon>
     </span>
     <section v-if="isSpike" class="progress-bar">
       <ul class="progress-left">
@@ -227,8 +230,10 @@ export default {
     onMounted(async () => {
       const { data } = await getProductData();
       const { productImages } = data;
+      console.log(data);
       const i = Math.floor(Math.random() * 6);
       productImgs = productImages[i];
+      console.log(productImgs);
     });
 
     const handleViewDetail = () => {
