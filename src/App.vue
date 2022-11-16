@@ -9,6 +9,7 @@
 <script lang="ts">
 export default {
   name: "App",
+  //edit
 };
 </script>
 <style lang="scss">
