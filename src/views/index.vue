@@ -6,7 +6,7 @@
  * @FilePath: /vue3-init-h5-1/src/views/index.vue
  -->
 <template>
-  <router-view class="router-view" />
+  <router-view class="router-view"></router-view>
 </template>
 
 <script>
