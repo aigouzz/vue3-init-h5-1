@@ -12,6 +12,9 @@ const mutations = {
     state.searchHistory = searchHistory;
     setStore("searchHistory", searchHistory);
   },
+  setSearchText(state: any, payload: any) {
+    state.searchText = payload;
+  },
 };
 const actions = {};
 
