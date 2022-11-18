@@ -1,6 +1,7 @@
 import { setStore } from "../../utils/util";
 const state = {
   searchHistory: [],
+  searchText: "",
 };
 const getters = {};
 const mutations = {
