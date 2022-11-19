@@ -16,7 +16,13 @@ const mutations = {
     state.searchText = payload;
   },
 };
-const actions = {};
+const actions = {
+  getSearchText(context: any): Promise<unknown> {
+    return new Promise((resolve, reject) => {
+      context.commit("setSearchText");
+    });
+  },
+};
 
 export default {
   namespaced: true,
